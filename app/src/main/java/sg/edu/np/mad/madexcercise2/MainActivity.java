@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button btn = findViewById(R.id.fButton);
         User usr = initUser();
-        setText(usr,btn);
+        setTxt(usr,btn);
         btn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     usr.followed = false;
                 }
-                setText(usr,btn);
+                setTxt(usr,btn);
             }
         });
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method to set the text based on the condition
-    public void setText(User usr,Button btn){
+    public void setTxt(User usr,Button btn){
         TextView txt = btn;
         if(usr.followed == false){
             txt.setText("Follow");
